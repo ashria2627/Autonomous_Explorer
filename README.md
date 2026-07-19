@@ -1,15 +1,15 @@
 # Autonomous Explorer
 ### Navigate · Detect · Explore
 
-> A low-cost autonomous disaster scout robot that enters hazardous zones before human responders, maps danger in real time using AI, and transmits intelligence over LoRa — built for under ৳10,000.
+> A low-cost autonomous disaster scout robot that enters hazardous zones before human responders, maps danger in real time using AI, and transmits intelligence over LoRa .
 
-**BEAR Summit 2026 · CES Pavilion · Silicon River Initiative**
+**BEAR Summit 2026 · CES Pavilion · Silicon River Initiative ·MIST **
 
 ---
 
 ## What It Does
 
-Autonomous Explorer is a robot that goes into disaster zones first — collapsed buildings, flood-damaged structures, fire sites — so humans don't have to. It continuously monitors carbon monoxide, air quality, temperature, and humidity. An on-device AI detects dangerous patterns before they cross critical thresholds. All data is transmitted wirelessly over LoRa (no WiFi needed) to a live cloud dashboard accessible from any device anywhere in the world.
+Autonomous Explorer is a robot that goes into disaster zones first; collapsed buildings, flood-damaged structures, fire sites; so humans don't have to. It continuously monitors carbon monoxide, air quality, temperature, and humidity. An on-device AI detects dangerous patterns before they cross critical thresholds. All data is transmitted wirelessly over LoRa (no WiFi needed) to a live cloud dashboard accessible from any device anywhere in the world.
 
 ---
 
@@ -97,9 +97,9 @@ GND  → IO0  ← disconnect after upload
 
 ## How the AI Works
 
-The robot uses Z-score anomaly detection — no training data needed, no internet required.
+The robot uses Z-score anomaly detection - no training data needed, no internet required.
 
-On startup it takes 20 readings to learn what "normal" looks like in that environment. From then on, if any sensor reading deviates sharply from the learned pattern, it flags a DANGER alert — even before readings cross a fixed threshold.
+On startup it takes 20 readings to learn what "normal" looks like in that environment. From then on, if any sensor reading deviates sharply from the learned pattern, it flags a DANGER alert - even before readings cross a fixed threshold.
 
 ```
 Normal: readings stable → All Clear
@@ -116,11 +116,12 @@ The robot adapts to any environment automatically.
 - AI anomaly alerts with blinking danger indicator
 - Auto-detects new robots when they power on
 - Live camera feed per robot (toggle on/off)
-- Fleet overview — total bots, danger count, average temp
-- Responsive — works on mobile, tablet, desktop
+- Fleet overview ; total bots, danger count, average temp
+- Responsive ; works on mobile, tablet, desktop
 - Accessible from any device via Railway URL
 
 ---
 
 
-Navigate. Detect. Explore.
+> By team Redflags || Military Institute of Science and Technology
+> Email: mistautonomousexplorer@gmail.com
