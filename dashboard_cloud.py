@@ -113,6 +113,9 @@ main{padding:24px;max-width:1300px;margin:0 auto}
 .cam-wrap.show{height:200px}
 .cam-wrap img{width:100%;height:200px;object-fit:cover}
 .cam-wrap .no-cam{width:100%;height:200px;display:flex;align-items:center;justify-content:center;color:#555;font-size:12px}
+.move-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 18px;background:#f0f4f8;border-bottom:1px solid var(--border)}
+.move-pill{background:var(--heading);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:12px;white-space:nowrap}
+.move-dist{font-size:10px;color:var(--text);opacity:0.7;font-family:monospace}
 .sensor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
 .sensor-item{background:var(--card);padding:14px 16px;min-height:80px}
 .s-label{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);opacity:0.5;margin-bottom:5px}
@@ -204,27 +207,36 @@ function renderRobots(data){
       </div>
       <div class="ai-alert ${isDanger?'show':''}">🧠 AI anomaly detected — unusual sensor pattern</div>
       <div class="cam-wrap ${camShown}" id="cam-${id}">${camContent}</div>
+      ${r.MOVE?`
+      <div class="move-bar">
+        <span class="move-pill">🧭 ${r.MOVE}</span>
+        <span class="move-dist">F:${r.DISTF??'--'}cm &nbsp; L:${r.DISTL??'--'}cm &nbsp; R:${r.DISTR??'--'}cm &nbsp; B:${r.DISTB??'--'}cm</span>
+      </div>`:''}
       <div class="sensor-grid">
+        ${r.CO!==undefined?`
         <div class="sensor-item">
           <div class="s-label">Carbon Monoxide</div>
           <div class="s-val">${r.CO}<span class="s-unit">ppm</span></div>
           <div class="bar-track"><div class="bar-fill ${coPct>70?'high':''}" style="width:${coPct}%"></div></div>
-        </div>
+        </div>`:''}
+        ${r.AIR!==undefined?`
         <div class="sensor-item">
           <div class="s-label">Air Quality</div>
           <div class="s-val">${r.AIR}<span class="s-unit">aqi</span></div>
           <div class="bar-track"><div class="bar-fill ${airPct>70?'high':''}" style="width:${airPct}%"></div></div>
-        </div>
+        </div>`:''}
+        ${r.TEMP!==undefined?`
         <div class="sensor-item">
           <div class="s-label">Temperature</div>
           <div class="s-val">${r.TEMP}<span class="s-unit">°C</span></div>
           <div class="bar-track"><div class="bar-fill ${tmpPct>70?'high':''}" style="width:${tmpPct}%"></div></div>
-        </div>
+        </div>`:''}
+        ${r.HUM!==undefined?`
         <div class="sensor-item">
           <div class="s-label">Humidity</div>
           <div class="s-val">${r.HUM}<span class="s-unit">%</span></div>
           <div class="bar-track"><div class="bar-fill" style="width:${humPct}%"></div></div>
-        </div>
+        </div>`:''}
       </div>
     </div>`;
     const existing=document.getElementById('card-'+id);

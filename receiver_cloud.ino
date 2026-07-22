@@ -6,7 +6,7 @@
 // ── CHANGE THESE ──
 const char* ssid     = "YOUR_WIFI_NAME";
 const char* password = "YOUR_WIFI_PASSWORD";
-const char* serverURL = "https://your-app.railway.app/update"; // change after deploying
+const char* serverURL = "https://autonomousexplorer-production.up.railway.app"; 
 
 #define LORA_SS   5
 #define LORA_RST  14
